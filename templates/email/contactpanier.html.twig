@@ -1,0 +1,38 @@
+Penom: {{ prenom }}</br>
+Nom: {{ nom }}</br>
+Email: {{ mail }}</br>
+Téléphone: {{ telephone }}</br>
+Adresse: {{ adresse }}</br>
+
+   <table class="table">
+   <thead>
+    <tr>
+     <th>Nom</th>
+     <th>Description</th>
+     <th>Quantite</th>
+     <th>Prix unitaire</th>
+     <th>Prix total</th>
+     <th></th>
+     <th>Image</th>
+    </tr>
+   <thead>
+
+   <tbody>
+     {% for element in panierData %}
+      <tr>
+       <td>{{element.produit.nom }}</td>
+       <td>{{element.produit.description|raw}}</td>
+       <td>{{ element.quantite}}</td>
+       <td>{{element.produit.prix}}</td>
+       <td>{{ element.produit.prix * element.quantite }}<td>
+       <td><img src="{{ vich_uploader_asset(element.produit, 'imageFile')}}" width="50px"; height="60px";></td>
+
+
+     {% endfor %}
+
+     <h3>Total à payer: {{ total }}</h3>
+   </tbody>
+
+  </table>
+
+

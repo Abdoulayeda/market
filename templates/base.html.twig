@@ -3,17 +3,59 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        <meta content="" name="description">
+        <meta content="" name="keywords">
+       <link href="{{ asset('fontawesome/css/all.css') }}" rel="stylesheet">
+       <link href="{{ asset('bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+<style>
+    .icons {
+      display: grid;
+      max-width: 100%;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr) );
+      gap: 1.25rem;
+    }
+    .icon {
+      background-color: var(--bs-light);
+      border-radius: .25rem;
+    }
+    .bi {
+      margin: .25rem;
+      font-size: 2.5rem;
+    }
+    .label {
+      font-family: var(--bs-font-monospace);
+    }
+    .label {
+      display: inline-block;
+      width: 100%;
+      overflow: hidden;
+      padding: .25rem;
+      font-size: .625rem;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  </style>
+
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
-        {% endblock %}
+    {% endblock %}
 
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
         {% endblock %}
     </head>
-    <body>
-        {% block body %}{% endblock %}
+    <body class="bg-info">
+        {% include "base/header.html.twig" %}
+     
+        
+          
+        {% block body %}
+        
+        {% endblock %}
+        
+
+    {# {% include("base/footer.html.twig") %} #}    
+
     </body>
 </html>

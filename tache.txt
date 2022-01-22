@@ -1,0 +1,15 @@
+Admin
+Directeur(Admin)
+Secretaire ou RH
+Employe
+Tache
+
+Sécretaire 
+	Ajoute un employé
+	Modifie
+	Supprimer
+
+Employer:
+	Connecter	
+
+

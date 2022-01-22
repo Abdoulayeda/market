@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PanierController!{% endblock %}
+
+{% block body %}
+
+<div class="container">
+
+  <table class="table">
+   <thead>
+    <tr>
+     <th>Nom</th>
+     <th>Description</th>
+     <th>Quantite</th>
+     <th>Prix unitaire</th>
+     <th>Prix total</th>
+     <th></th>
+     <th>Image</th>
+    </tr>
+   <thead>
+
+   <tbody>
+     {% for element in panierData %}
+      <tr>
+       <td>{{element.produit.nom }}</td>
+       <td>{{element.produit.description|raw}}</td>
+       <td>{{ element.quantite}}</td>
+       <td>{{element.produit.prix}}</td>
+       <td>{{ element.produit.prix * element.quantite }}<td>
+       <td><img src="{{ vich_uploader_asset(element.produit, 'imageFile')}}" width="50px"; height="60px";></td>
+       <td> <a href="{{path('panier_add', {id: element.produit.id})}}" class ="btn btn-success"> <i class="fa fa-plus"></i> </a></td>
+       <td><a href="{{path('panier_retire', {id: element.produit.id})}}" class ="btn btn-warning"> <i class="fa fa-minus"></i> </a></td>
+       <td><a href="{{path('panier_delete', {id: element.produit.id})}}" class ="btn btn-danger" ><i class="fa fa-trash-alt "></i></a></td>
+      </tr>
+       {% else %}
+      <td> <h2>Votre panier est vide </h2></td>
+     {% endfor %}
+   </tbody>
+
+  </table>
+
+ <div class="">Total à payer: {{ total}} F</div>
+
+ <div class="col-lg-6">
+ 
+
+ {{ form_start(form) }}
+
+
+
+
+
+
+ {{ form_end(form)}}
+ 
+ </div>
+
+</div>
+{% endblock %}

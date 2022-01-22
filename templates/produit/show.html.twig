@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+<div class="container">
+ <div>
+
+ {% for message in app.flashes('message') %}
+   <div class="alert alert-success" role="alert">{{ message }}</div>
+ {% endfor %}
+ </div>
+ <div class="row mt-5">
+
+   <div class="col-lg-3">
+    <h3>{{ produit.nom }}</h3>
+    <p>{{ produit.description|raw }}</p>
+    <p>{{ produit.prix }} FCFA </p>
+   </div>
+
+   <div class="col-lg-6">
+    <img src="{{ vich_uploader_asset(produit, 'imageFile') }}" width="300px"; height="350px";>
+   </div>
+
+
+
+   </div>
+
+ 
+
+   <a href="{{path('panier_add', {id: produit.id})}}" class="btn btn-primary col-lg-3">Ajouter au panier</a>
+
+
+<div>
+
+{% endblock %}

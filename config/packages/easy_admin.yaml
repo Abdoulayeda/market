@@ -1,0 +1,8 @@
+easy_admin:
+    entities:
+        Employe:
+            # ...
+            list:
+                fields:
+                    - { property: 'image', template: 'vich_uploader_image.html.twig' }
+ 

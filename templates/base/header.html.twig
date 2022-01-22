@@ -1,0 +1,45 @@
+ <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a href="/" class="navbar-brand">DiaoEntreprise</a>
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse1">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse1">
+                <div class="navbar-nav">
+
+                    {% if is_granted('ROLE_ADMIN') %}
+                    <a href="{{path('admin')}}" class="nav-item nav-link active">Admin</a>
+                      {% endif %}
+
+                    <a href="{{path('produit_index')}}" class="nav-item nav-link active">Produits</a>
+
+
+                  {% if  not app.user %}
+
+                    <a href="{{path('app_register')}}" class="nav-item nav-link active">Inscription</a>
+                    <a href="{{path('app_login')}}" class="nav-item nav-link active">Connexion</a>
+                   {% endif %}
+                </div>
+              {#   <form class="d-flex ms-auto">
+                    <input type="text" class="form-control me-sm-2" placeholder="Search">
+                    <button type="submit" class="btn btn-outline-light">Search</button>
+                </form> #}
+
+                <div class="d-flex ms-auto">
+               
+                    <div class="mb-3">
+                        <a href="{{ path('panier_index') }}" class="nav-item nav-link active btn btn-warning">Panier</a>
+                    </div>
+
+
+                <div class="d-flex ms-auto">
+                 {% if app.user %}
+                    <div class="mb-3">
+                        {# You are logged in as {{ app.user.username }},#} <a href="{{ path('app_logout') }}" class="btn btn-danger active">Déconnexion</a>
+                    </div>
+                 {% endif %}
+
+                </div>
+            </div>
+        </div>
+    </nav>

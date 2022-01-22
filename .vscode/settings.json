@@ -1,0 +1,46 @@
+{
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "askForPassword": true,
+            "driver": "MySQL",
+            "name": "mysql",
+            "database": "loginregister",
+            "username": "aliou"
+        },
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MySQL",
+            "database": "loginregister",
+            "username": "aliou",
+            "password": "diaoaliou",
+            "name": "mysql"
+        },
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MySQL",
+            "database": "loginregister",
+            "username": "aliou",
+            "password": "diaoaliou",
+            "name": "mysql"
+        }
+    ],
+    "workbench.editor.autoLockGroups": {
+        "terminalEditor": false
+    }
+}

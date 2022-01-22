@@ -1,0 +1,7 @@
+{
+    "recommendations": [
+        "formulahendry.vscode-mysql",
+        "phiter.phpstorm-snippets",
+        "animus-coop.vscode-phpstorm-formatter"
+    ]
+}

@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ProduitController!{% endblock %}
+
+{% block body %}
+<div class="bg-info mt-0">
+
+  <div class="container">
+
+ <div class="row mt-0 mb-5">
+{% for produit in produits %}
+<div class="col-lg-3 mt-5">
+  <h3 class="card-title">{{ produit.nom}} </h3>
+   <div class="card-body">
+   <a href="{{path('produit_show', {id: produit.id})}}"  > <img src="{{ vich_uploader_asset(produit, 'imageFile') }}", width="200px"; height="300px"; > </a>
+   </div>
+   <p>Prix:{{ produit.prix}} FCFA</p>
+{#    <a href="{{path('produit_show', {id: produit.id})}}" class="btn btn-warning" >
+   <i class="fa fa-meh-rolling-eyes">
+   </i>
+  </a> #}
+  <a href="{{path('panier_add', {id: produit.id})}}"  >
+    <div class="btn btn-success"> 
+    <i class="fa fa-cart-plus"></i>
+    </div>
+  </a>
+</div>
+{% endfor %}
+
+</div>
+{% endblock %}
